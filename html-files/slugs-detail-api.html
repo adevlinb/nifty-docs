@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Nifty_Dogs_Documentation</title>
+</head>
+
+<body>
+    <div id="header">
+        <img src="/images/paw_prints.png" alt="">
+        <h1>[NiftyDogs]</h1>
+    </div>
+    <div id="main">
+        <aside>
+            <h1>Endpoints:</h1>
+            <div><a href="../index.html">Introduction</a></div>
+            <div><a href="keys-list-api.html">Keys List</a></div>
+            <div><a href="keys-detail-api.html">Key Detail</a></div>
+            <div><a href="slugs-detail-api.html">Slug Detail</a></div>
+            <div><a href="dogs-list-api.html">Dogs List</a></div>
+            <div><a href="dogs-detail-api.html">Dog Detail</a></div>
+            <div><a href="populate-dog-photos-api.html">Populate Dog Photos</a></div>
+            <div><a href="docker.html">Docker Documentation</a></div>
+        </aside>
+        <section>
+            <div id="slugs-detail-api">
+                <h1>Slugs API - GET / PUT / DELETE - /api/keys/slug/:slug</h1>
+                <h5>Use this endpoint to:</h5>
+                <ul>
+                    <li>retrieve informatio about a single key via it's slug value</li>
+                    <li>increment the value of the key</li>
+                    <li>delete that key via it's slig value</li>
+                </ul>
+                <div class="sections">
+                    <h1>GET /api/keys/slug/:slug</h1>
+                    <h5>This endpoint will:</h5>
+                    <ul>
+                        <li>return the slug found in the database</li>
+                    </ul>
+                    <h5>Request:</h5>
+                    <pre><code>GET http://localhost:8000/api/keys/slug/test-test-test-again/</code></pre>
+                    <h5>Response:</h5>
+
+<pre><code>
+{
+    "id": 4,
+    "key": "test test test again",
+    "int_value": 1,
+    "slug": "test-test-test-again",
+    "created_at": "2022-12-13T07:38:07.492563Z",
+    "updated_at": "2022-12-13T07:45:05.594910Z"
+}
+</code>
+</pre>
+                </div>
+                <div class="sections">
+                    <h1>PUT /api/keys/slug/:slug</h1>
+                    <h5>This endpoint will:</h5>
+                    <ul>
+                        <li>increment the value of the key/slug found in the database</li>
+                    </ul>
+                    <h5>Request:</h5>
+                    <pre><code>PUT http://localhost:8000/api/keys/slug/test-test-test-again/</code></pre>
+                    <h5>Response:</h5>
+
+<pre><code>
+{
+    "id": 4,
+    "key": "test test test again",
+    "int_value": 2,
+    "slug": "test-test-test-again",
+    "created_at": "2022-12-13T07:38:07.492563Z",
+    "updated_at": "2022-12-13T07:45:05.594910Z"
+}
+</code>
+</pre>
+                </div>
+                <div class="sections">
+                    <h1>DELETE /api/keys/slug/:slug</h1>
+                    <h5>This endpoint will:</h5>
+                    <ul>
+                        <li>delete the key/slug found in the database</li>
+                    </ul>
+                    <h5>Request:</h5>
+                    <pre><code>DELETE http://localhost:8000/api/keys/slug/test-test-test-again/</code></pre>
+                    <h5>Response:</h5>
+                    <pre><code>{ 'message': 'The key was deleted successfully!' }</code></pre>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <h5>[footer]</h5>
+    </footer>
+</body>
+
+</html>

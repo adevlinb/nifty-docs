@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Nifty_Dogs_Documentation</title>
+</head>
+
+<body>
+    <div id="header">
+        <img src="/images/paw_prints.png" alt="">
+        <h1>[NiftyDogs]</h1>
+    </div>
+    <div id="main">
+        <aside>
+            <h1>Endpoints:</h1>
+            <div><a href="../index.html">Introduction</a></div>
+            <div><a href="keys-list-api.html">Keys List</a></div>
+            <div><a href="keys-detail-api.html">Key Detail</a></div>
+            <div><a href="slugs-detail-api.html">Slug Detail</a></div>
+            <div><a href="dogs-list-api.html">Dogs List</a></div>
+            <div><a href="dogs-detail-api.html">Dog Detail</a></div>
+            <div><a href="populate-dog-photos-api.html">Populate Dog Photos</a></div>
+            <div><a href="docker.html">Docker Documentation</a></div>
+        </aside>
+        <section>
+            <div id="keys-list-api">
+                <h1>Dogs List API - GET, DELETE - /api/dogs/</h1>
+                <h5>Use this endpoint to:</h5>
+                <ul>
+                    <li>retrieve all dog photos</li>
+                    <li>if database is empty... use /api/dogs/poulate/ to populate with 2 dozen dog images</li>
+                    <li>delete all dog photos</li>
+                </ul>
+                <div class="sections">
+                    <h1>GET /api/dogs/</h1>
+                    <h5>This endpoint will:</h5>
+                    <ul>
+                        <li>return an array of all dogs in the database</li>
+                    </ul>
+                    <h5>Request:</h5>
+                    <pre><code>GET http://localhost:8000/api/keys/</code></pre>
+                    <h5>Response:</h5>
+
+<pre><code>[
+    {
+        "id": 50,
+        "breed": "springer",
+        "sub_breed": "english",
+        "original_url": "https://images.dog.ceo/breeds/springer-english/n02102040_5096.jpg",
+        "transformed_url":
+        "https://ik.imagekit.io/rfxlfa3n0/tr:ot-Dog%20Breed%20springer,ots-45,otbg-white/https://images.dog.ceo/breeds/springer-english/n02102040_5096.jpg",
+        "unique_photo_id": "n02102040_5096",
+        "metadata": {
+            "exif": {},
+            "size": 38538,
+            "pHash": "7eadabaeb1a9a33a",
+            "width": 500,
+            "format": "jpg",
+            "height": 334,
+            "density": 72,
+            "quality": 0,
+            "hasColorProfile": false,
+            "hasTransparency": false
+        },
+        "created_at": "2022-12-13T01:56:17.584146Z",
+        "updated_at": "2022-12-13T01:56:17.584165Z"
+    },
+    {
+        "id": 51,
+        "breed": "hound",
+        "sub_breed": "afghan",
+        "original_url": "https://images.dog.ceo/breeds/hound-afghan/n02088094_3059.jpg",
+        "transformed_url":
+        "https://ik.imagekit.io/rfxlfa3n0/tr:ot-Dog%20Breed%20hound,ots-45,otbg-white/https://images.dog.ceo/breeds/hound-afghan/n02088094_3059.jpg",
+        "unique_photo_id": "n02088094_3059",
+        "metadata": {
+            "exif": {},
+            "size": 45794,
+            "pHash": "f1ef8f8f21d8c673",
+            "width": 371,
+            "format": "jpg",
+            "height": 500,
+            "density": 72,
+            "quality": 0,
+            "hasColorProfile": false,
+            "hasTransparency": false
+        },
+        "created_at": "2022-12-13T01:56:19.790191Z",
+        "updated_at": "2022-12-13T01:56:19.790209Z"
+    }
+]</code></pre>
+
+                </div>
+                <div class="sections">
+                    <h1>DELETE /api/dogs/</h1>
+                    <h5>This endpoint will:</h5>
+                    <ul>
+                        <li>delete all dog photos in the database</li>
+                    </ul>
+                    <h5>Request:</h5>
+                    <pre><code>DELETE http://localhost:8000/api/keys/</code></pre>
+                    <h5>Response:</h5>
+                    <pre><code>{ 'message': '{} All Dog Photos were deleted successfully!' }</code></pre>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <h5>[footer]</h5>
+    </footer>
+</body>
+
+</html>

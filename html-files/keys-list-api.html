@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Nifty_Dogs_Documentation</title>
+</head>
+
+<body>
+    <div id="header">
+        <img src="/images/paw_prints.png" alt="">
+        <h1>[NiftyDogs]</h1>
+    </div>
+    <div id="main">
+        <aside>
+            <h1>Endpoints:</h1>
+            <div><a href="../index.html">Introduction</a></div>
+            <div><a href="keys-list-api.html">Keys List</a></div>
+            <div><a href="keys-detail-api.html">Key Detail</a></div>
+            <div><a href="slugs-detail-api.html">Slug Detail</a></div>
+            <div><a href="dogs-list-api.html">Dogs List</a></div>
+            <div><a href="dogs-detail-api.html">Dog Detail</a></div>
+            <div><a href="populate-dog-photos-api.html">Populate Dog Photos</a></div>
+            <div><a href="docker.html">Docker Documentation</a></div>
+        </aside>
+        <section>
+            <div id="keys-list-api">
+                <h1>Keys List API - GET, POST, DELETE - /api/keys/</h1>
+                <h5>Use this endpoint to:</h5>
+                <ul>
+                    <li>retrieve all keys in the database</li>
+                    <li>create an individual key</li>
+                    <li>delete all keys</li>
+                </ul>
+                <div class="sections">
+                    <h1>GET /api/keys/</h1>
+                    <h5>This endpoint will:</h5>
+                    <ul>
+                        <li>return an array of all the keys in the database.</li>
+                    </ul>
+                    <h5>Request:</h5>
+                    <pre><code>GET http://localhost:8000/api/keys/</code></pre>
+                    <h5>Response:</h5>
+<pre><code>[
+    {
+        "id": 1,
+        "key": "testing",
+        "int_value": 1,
+        "slug": "testing",
+        "created_at": "2022-12-11T02:05:53.290299Z",
+        "updated_at": "2022-12-11T02:05:53.290380Z"
+    },
+    {
+        "id": 2,
+        "key": "testing2",
+        "int_value": 1,
+        "slug": "testing2",
+        "created_at": "2022-12-11T03:09:02.465273Z",
+        "updated_at": "2022-12-11T03:09:02.465290Z"
+    },
+    {
+        "id": 3,
+        "key": "testing 2 and 3",
+        "int_value": 3,
+        "slug": "testing-2-and-3",
+        "created_at": "2022-12-11T03:09:18.198690Z",
+        "updated_at": "2022-12-11T21:00:43.580932Z"
+    }
+]</code>
+</pre>
+                </div>
+                <div class="sections">
+                    <h1>POST /api/keys/</h1>
+                    <h5>This endpoint will:</h5>
+                    <ul>
+                        <li>create a new key in the database</li>
+                        <li>only need to submit the name of the key</li>
+                        <li>create a slug based on your key value</li>
+                        <li>the slug will allow you to increment the value of your key in the future</li>
+                        <li>Your key can contain spaces, letters, numbers, underscores or hyphens</li>
+                        <li>created instance will be returned upon completion</li>
+                    </ul>
+                    <h5>Request:</h5>
+                    <pre><code>POST http://localhost:8000/api/keys/</code></pre>
+                    <h5>Body:</h5>
+                    <pre><code>{ "key": "test test test" }</code></pre>
+                    <h5>Response: returns created database entry</h5>
+<pre><code>
+{
+    "id": 4,
+    "key": "test test test",
+    "int_value": 1,
+    "slug": "test-test-test",
+    "created_at": "2022-12-11T02:05:53.290299Z",
+    "updated_at": "2022-12-11T02:05:53.290380Z"
+}
+</code>
+</pre>
+                </div>
+                <div class="sections">
+                    <h1>DELETE /api/keys/</h1>
+                    <h5>This endpoint will:</h5>
+                    <ul>
+                        <li>delete all the keys in the database</li>
+                    </ul>
+                    <h5>Request:</h5>
+                    <pre><code>DELETE http://localhost:8000/api/keys/</code></pre>
+
+                    <h5>Response:</h5>
+                    <pre><code>{ "message": "3 All keys were deleted successfully!" }</code></pre>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <h5>[footer]</h5>
+    </footer>
+</body>
+
+</html>

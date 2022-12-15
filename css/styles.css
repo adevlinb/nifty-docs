@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+#header {
+    background-color: cornflowerblue;
+    min-height: 10vh;
+}
+
+#header > img {
+    height: 10vh;
+    position: absolute;
+}
+
+#header > h1 {
+    margin-left: 200px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin: 0;
+}
+
+#main {
+    display: flex;
+    min-height: 80vh;
+    overflow: scroll;
+    padding-bottom: 2.5vh;
+    padding-right: 2.5vh;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 200px;
+    max-width: 300px;
+    overflow: scroll;
+    margin-right: 10px;
+}
+
+aside > h1 {
+    margin-left: 10px;
+}
+aside > div {
+    padding: 10px;
+}
+
+aside > div > a {
+    margin: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+aside > div:hover {
+    background-color: cornflowerblue;
+}
+
+pre > code {
+    padding: 0;
+}
+
+code, pre {
+    background: #cbd9ea;
+    word-wrap: break-word;
+    border-radius: .2rem;
+    padding: 5px 20px;
+}
+
+pre {
+    padding: 5px 20px;
+    width: fit-content;
+    margin: 0;
+    max-width: 75vw;
+    overflow: scroll;
+    border: 0.5px solid black;
+}
+
+h5 {
+    margin: 5px;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+p {
+    margin-top: 5px;
+}
+
+footer {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: cornflowerblue;
+}
+
+ul {
+    margin: 2.5px;
+}
+
+.sections {
+    margin-top: 50px;
+}
