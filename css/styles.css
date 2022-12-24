@@ -31,6 +31,10 @@ body {
     padding-right: 2.5vh;
 }
 
+#intro {
+    padding-right: 10vw;
+}
+
 aside {
     display: flex;
     flex-direction: column;

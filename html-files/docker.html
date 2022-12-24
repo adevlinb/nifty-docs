@@ -31,13 +31,58 @@
                 <h1>Docker Documentation</h1>
                 <h5>Use this page to:</h5>
                 <ul>
-                    <li>setup a docker image to use this api</li>
+                    <li>setup a docker image to use this api from a local docker container</li>
                 </ul>
-                <h5>First we need to download the image from docker</h5>
-                <h5>From your terminal / CLI</h5>
+                <br>
+                <h3>1. Pull the image from docker repo:</h3>
+                <h5>From Terminal / CLI:</h5>
                 <pre><code>docker pull adevlinb/lofty</code></pre>
-                <pre><code>docker run -p 8000:8000 adevlinb/lofty</code></pre>
-                <pre><code></code></pre>
+                <br>
+                <br>
+                <h3>2. Run the image in a container:</h3>
+                <h5>From Terminal / CLI</h5>
+                <pre><code>docker run --name lofty-backend -p 8000:8000 adevlinb/lofty</code></pre>
+                <br>
+                <br>
+                <h3>3. Browse to localhost:8000</h3>
+                <pre><code>... just go to localhost:8000 in your browser and an intro page should pop up...</code></pre>
+                <br>
+                <br>
+                <h3>Extra Commands you may want to know:</h3>
+                <h5>From Terminal / CLI</h5>
+                <pre><code>docker run --name lofty-backend -p 8000:8000 -d adevlinb/lofty</code></pre>
+                <p>The "-d" command will run the container "detached" which will allow you to run
+                    commands in the same terminal while the container is in use.</p>
+                <br>
+                <h5>From Terminal / CLI</h5>
+                <pre><code>docker stop lofty-backend</code></pre>
+                <p>This command will stop the running container.</p>
+                <br>
+                <h5>From Terminal / CLI</h5>
+                <pre><code>docker start lofty-backend</code></pre>
+                <p>This command will show all running containers</p>
+                <br>
+                <h5>From Terminal / CLI</h5>
+                <pre><code>docker ps</code></pre>
+                <p>This command will show all running containers</p>
+                <br>
+                <h5>From Terminal / CLI</h5>
+                <pre><code>docker rm lofty-backend</code></pre>
+                <p>This command will remove the container (based on container name - if the container is not running)</p>
+                <p>Will warn cannot remove a running container</p>
+                <br>
+                <h5>From Terminal / CLI</h5>
+                <pre><code>docker container prune</code></pre>
+                <p>This command will remove all stopped containers</p>
+                <p>Will warn / ask if you want to follow through with this command</p>
+                <br>
+                <h5>From Terminal / CLI</h5>
+                <pre><code>docker images</code></pre>
+                <p>Will show all images in your local repo</p>
+                <br>
+                <h5>From Terminal / CLI</h5>
+                <pre><code>docker rmi lofty-backend</code></pre>
+                <p>This command will remove all stopped containers</p>
 
             </div>
         </section>
